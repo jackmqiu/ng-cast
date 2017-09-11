@@ -5,9 +5,8 @@ angular.module('video-player')
   },
 
   controller: function() {
-    console.log(this.videos);
 
-    this.selectVideo = function(index) {
+    this.onClick = function(index) {
 
     };
   },
@@ -16,7 +15,7 @@ angular.module('video-player')
     <ul class="video-list">
       <video-list-entry
         video="video"
-        ng-click="$ctrl.selectVideo($index)"
+        ng-click="$ctrl.onClick($index)"
         ng-repeat="video in $ctrl.videos track by $index"
       />
     </ul>
