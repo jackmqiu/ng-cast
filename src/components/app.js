@@ -2,9 +2,6 @@ angular.module('video-player')
 
 .component('app', {
   controller: function(youTube) {
-    // this.videos = exampleVideoData;
-    // this.currentVideo = this.videos[0]
-
     this.updateVideo = function(index) {
       this.currentVideo = this.videos[index];
     };
@@ -21,7 +18,7 @@ angular.module('video-player')
     };
 
     this.$onInit = function () {
-      this.search();
+      this.search('sunflowers');
     };
   },
 

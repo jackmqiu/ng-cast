@@ -6,7 +6,7 @@ angular.module('video-player')
       url: 'https://www.googleapis.com/youtube/v3/search',
       params: {
         key: YOUTUBE_API_KEY,
-        q: searchTerm || 'cats',
+        q: searchTerm || 'sunflowers',
         part: 'snippet',
         maxResults: 5,
         type: 'video',
