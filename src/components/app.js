@@ -1,11 +1,27 @@
 angular.module('video-player')
 
 .component('app', {
-  controller: function() {
-    this.videos = exampleVideoData;
-    this.currentVideo = this.videos[0];
+  controller: function(youTube) {
+    // this.videos = exampleVideoData;
+    // this.currentVideo = this.videos[0]
+
     this.updateVideo = function(index) {
       this.currentVideo = this.videos[index];
+    };
+
+    this.updateVideoList = function(videos) {
+      this.videos = videos;
+      this.currentVideo = this.videos[0];
+    };
+
+    this.searchResults = [];
+
+    this.search = (term) => {
+      youTube.get(term, this.updateVideoList.bind(this));
+    };
+
+    this.$onInit = function () {
+      this.search();
     };
   },
 
